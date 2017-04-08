@@ -1,0 +1,10 @@
+lis=[]
+ask=input()
+mi=ask.split(' ')
+print(ask)
+r=int(mi[0])
+e=int(mi[2])
+i=int(mi[1])
+lis.insert(i,e)
+print(lis)
+lis.append()

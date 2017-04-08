@@ -1,0 +1,6 @@
+print('Enter your first name.')
+first=input()
+print('Enter your last name.')
+last=input()
+c=str(first[0])
+print(c+last)
