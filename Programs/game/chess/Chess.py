@@ -18,9 +18,17 @@ def getindex(coin):
             #print(row,column)
             if chessboard[row][column]==coin:
                 return(row,column)
-print('Whites turn.Please enter the coin to move')
+print('Whites turn.Please enter the coin to move.')
 coin=input()
 position=getindex(coin)
 print(position)
-print('Enter a move')
-move=tuple(input())
+print('Enter a row.')
+row=int(input())
+print('Enter a column.')
+column = int(input())
+chessboard[row][column]=coin
+Board.drawboard(chessboard)
+#clear the position from which the pawn was moved
+#convert into move function and call it twice,1 for white turn and 1 for black turn
+#add comments describing the code
+#at least 6 comments
