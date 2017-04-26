@@ -21,35 +21,32 @@ def getindex(coin):
 def move():
     #this is White turn
     print('Whites turn.Please enter the coin to move.')
-    coin=input()
-    position=getindex(coin)
+    coin = input()
+    position = getindex(coin)
     print(position)
     print('Enter a row.')
-    row=int(input())
+    row = int(input())
     print('Enter a column.')
     column = int(input())
-    chessboard[position[0]][position[1]]='   '
-    chessboard[row][column]=coin
+    chessboard[position[0]][position[1]] = '   '
+    chessboard[row][column] = coin
     Board.drawboard(chessboard)
-move()
-#the code below is the black turn
-def move2():
+    #the code below is the black turn
     print('Blacks turn.Please enter the coin to move.')
-    coin=input()
-    position=getindex(coin)
+    coin = input()
+    position = getindex(coin)
     print(position)
-    #this is input for the move's row
+    # this is input for the move's row
     print('Enter a row.')
-    row=int(input())
-    #this is input for the move's column
+    row = int(input())
+    # this is input for the move's column
     print('Enter a column.')
     column = int(input())
-    chessboard[row][column]=coin
-    #this draws the board
-    chessboard[position[0]][position[1]]='   '
+    chessboard[row][column] = coin
+    # this draws the board
+    chessboard[position[0]][position[1]] = '   '
     Board.drawboard(chessboard)
-move2()
-#clear the position from which the pawn was moved
-#convert into move function and call it twice,1 for white turn and 1 for black turn DONE
-#add comments describing the code DONE
-#at least 6 comments DONE
+
+#move2()
+#combine move and move2 into a 1 function which takes a argument of black or white
+#allow to entering pawn names in any case     exsampe:Wp1 or wp1 or wP1 clue:have to use the .upper() or .lower()
