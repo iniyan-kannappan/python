@@ -1,5 +1,4 @@
 import Pawn,Board
-#below,that is a variable for the list which stores the chessboard
 chessboard = [['BR1', 'BK1', 'BB1', 'BQ1', 'BKI1', 'BB2', 'BK2', 'BR2'],
               ['BP1', 'BP2', 'BP3', 'BP4', 'BP5', 'BP6', 'BP7', 'BP8'],
               ['   ', '   ', '   ', '   ', '   ', '   ', '   ', '   '],
@@ -14,39 +13,26 @@ Board.drawboard(chessboard)
 print()
 def getindex(coin):
     for row in range(0,7,1):
+
         for column in range(0,8,1):
-            #print(row,column)
             if chessboard[row][column]==coin:
                 return(row,column)
-def move():
-    #this is White turn
-    print('Whites turn.Please enter the coin to move.')
-    coin = input()
-    position = getindex(coin)
-    print(position)
-    print('Enter a row.')
-    row = int(input())
-    print('Enter a column.')
-    column = int(input())
-    chessboard[position[0]][position[1]] = '   '
-    chessboard[row][column] = coin
-    Board.drawboard(chessboard)
-    #the code below is the black turn
-    print('Blacks turn.Please enter the coin to move.')
-    coin = input()
-    position = getindex(coin)
-    print(position)
-    # this is input for the move's row
-    print('Enter a row.')
-    row = int(input())
-    # this is input for the move's column
-    print('Enter a column.')
-    column = int(input())
-    chessboard[row][column] = coin
-    # this draws the board
-    chessboard[position[0]][position[1]] = '   '
-    Board.drawboard(chessboard)
 
-#move2()
-#combine move and move2 into a 1 function which takes a argument of black or white
-#allow to entering pawn names in any case     exsampe:Wp1 or wp1 or wP1 clue:have to use the .upper() or .lower()
+def move(turn):
+    print(turn+'s turn.Please enter the coin to move.')
+    coin=input().upper()
+    position = getindex(coin)
+    print(position)
+    print('Enter a row.')
+    row = int(input())
+    print('Enter a column.')
+    column = int(input())
+    chessboard[position[0]][position[1]] = '   '
+    chessboard[row][column] = coin
+    Board.drawboard(chessboard)
+while True:
+    move('White')
+    move('Black')
+#add useful comments to understand how the code works
+#add a conditition in the move that any pawn can move only 1 or 2 steps on the same column any other chess piece can continue to move
+#pawn could only move 2 steps in when in first row
